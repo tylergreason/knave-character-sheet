@@ -1,7 +1,7 @@
 import React, { Component } from 'react' 
 import { connect } from 'react-redux'
 import { updateTraits } from '../actions/knaves'
-import TraitCard from './TraitCard'
+import TraitCard from './cards/TraitCard'
 import Button from './general/Button'
 
 class Traits extends Component {
@@ -50,10 +50,7 @@ class Traits extends Component {
     render(){
         return(
             <div>Traits
-                {<form>
                 {this.renderTraits(this.props.traits)}
-                    
-                    </form>}
                 {this.renderSubmitTraitsButton()}
             </div>
         )

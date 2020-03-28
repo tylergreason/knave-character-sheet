@@ -12,7 +12,7 @@ const TraitCard = (props) => {
                 type='text'
                 // onClick={props.onClick}
                 // name={props.trait[0]}
-                placeholder={props.trait[1]}
+                value={props.trait[1]}
                 onChange={props.onChange}
                 >
                 {/* {props.trait[0]}:{props.trait[1]} */}

@@ -1,15 +1,15 @@
 import React, { Component } from 'react'
-import Traits from '../components/Traits'
 import { connect } from 'react-redux'
+import Traits from '../components/Traits'
+import AbilityScores from '../components/AbilityScores'
+
 
 class CharacterSheet extends Component {
-    state = {
-    }
-
     render(){
         return(
             <div>
                 Character Sheet
+                <AbilityScores />
                 <Traits />
             </div>
         )
