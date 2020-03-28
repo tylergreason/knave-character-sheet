@@ -1,3 +1,5 @@
+import { abilityScores } from '../components/general/AttributesInitialize'
+
 const traitOptions = {
     gender:['Male','Female'],
     physique:['Athletic','Brawny','Corpulent','Delicate','Gaunt','Hulking','Lanky','Ripped','Rugged','Scrawny','Short','Stout','Sinewy','Tiny','Slender','Towering','Flabby','Willowy','Statuesque','Wiry'],
@@ -34,7 +36,7 @@ const traits = {
 }
 
 
-function characterReducer(state = {abilityScores:[],
+function characterReducer(state = {abilityScores:abilityScores(),
     items:[],
     traits:traits}, action) {
     switch (action.type){
