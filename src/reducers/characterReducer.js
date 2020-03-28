@@ -39,12 +39,8 @@ function characterReducer(state = {abilityScores:[],
     traits:traits}, action) {
     switch (action.type){
       case 'UPDATE_TRAITS':
-        // debugger
         console.log(action.traits)
         return {...state, traits:action.traits}
-        // return {bands: state.bands.concat(action.payload.name)}
-        // return {...state, bands: [...state.bands, action.band]}
-        
       default: 
         return state
     }

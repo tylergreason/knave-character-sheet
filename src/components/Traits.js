@@ -1,6 +1,5 @@
 import React, { Component } from 'react' 
 import { connect } from 'react-redux'
-import { changeTrait } from '../actions/knaves'
 import { updateTraits } from '../actions/knaves'
 import TraitCard from './TraitCard'
 import Button from './general/Button'
@@ -25,13 +24,13 @@ class Traits extends Component {
 
     submitTraits = (traits) => {
         this.props.updateTraits(traits)
-        // console.log(traits)
     }
 
     renderSubmitTraitsButton = () => {
         return (
+            // render button that submits this component's state as traits 
             <Button 
-                onClick={this.submitTraits(this.state.traits)}
+                onSubmit={this.submitTraits(this.state.traits)}
                 text={"Submit Traits"}
             />
             )
@@ -41,6 +40,7 @@ class Traits extends Component {
         const traitPairs = Object.entries(traits) 
         return traitPairs.map(trait => {
             return <TraitCard  
+                        key={trait[0]}
                         trait={trait} 
                         onChange={this.handleOnChange}
                     />
@@ -50,7 +50,10 @@ class Traits extends Component {
     render(){
         return(
             <div>Traits
+                {<form>
                 {this.renderTraits(this.props.traits)}
+                    
+                    </form>}
                 {this.renderSubmitTraitsButton()}
             </div>
         )
@@ -61,4 +64,4 @@ const mapStateToProps = state => {
     return {traits: state.traits}
   }
 
-export default connect(mapStateToProps, {changeTrait, updateTraits})(Traits)
+export default connect(mapStateToProps, { updateTraits })(Traits)

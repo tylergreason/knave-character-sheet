@@ -1,9 +1,9 @@
-export const changeTrait = trait => {
-    return {
-        type:'CHANGE_TRAIT',
-        trait
-    }
-}
+// export const changeTrait = trait => {
+//     return {
+//         type:'CHANGE_TRAIT',
+//         trait
+//     }
+// }
 
 export const updateTraits = traits => {
     return {
