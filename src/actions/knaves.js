@@ -5,6 +5,13 @@ export const changeTrait = trait => {
     }
 }
 
+export const updateTraits = traits => {
+    return {
+        type:'UPDATE_TRAITS',
+        traits
+    }
+}
+
 // export const addQuote = quote => {
 //     return {
 //         type:'ADD_QUOTE', 

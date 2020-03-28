@@ -12,20 +12,25 @@ const traitOptions = {
     misfortune:['Abandoned','Addicted','Blackmailed']
 };
 
-
+// function to find random value from trait in traitOptions
+function randomTrait(trait){
+    const listLength = traitOptions[trait].length; 
+    const randomValue = Math.floor(Math.random()*listLength)
+    return traitOptions[trait][randomValue]
+}
 
 const traits = {
-    gender:traitOptions.gender[0],
-    physique:traitOptions.physique[0],
-    face:traitOptions.face[0],
-    skin:traitOptions.skin[0],
-    hair:traitOptions.hair[0],
-    clothing:traitOptions.clothing[0],
-    virtue:traitOptions.virtue[0],
-    vice:traitOptions.vice[0],
-    speech:traitOptions.speech[0],
-    background:traitOptions.background[0],
-    misfortune:traitOptions.misfortune[0]
+    gender:randomTrait('gender'),
+    physique:randomTrait('physique'),
+    face:randomTrait('face'),
+    skin:randomTrait('skin'),
+    hair:randomTrait('hair'),
+    clothing:randomTrait('clothing'),
+    virtue:randomTrait('virtue'),
+    vice:randomTrait('vice'),
+    speech:randomTrait('speech'),
+    background:randomTrait('background'),
+    misfortune:randomTrait('misfortune')
 }
 
 
@@ -34,8 +39,12 @@ function characterReducer(state = {abilityScores:[],
     traits:traits}, action) {
     switch (action.type){
       case 'UPDATE_TRAITS':
+        // debugger
+        console.log(action.traits)
+        return {...state, traits:action.traits}
         // return {bands: state.bands.concat(action.payload.name)}
         // return {...state, bands: [...state.bands, action.band]}
+        
       default: 
         return state
     }
